@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "802341075521",
+    "firebase_url": "https://testfcm-7d5e1.firebaseio.com",
+    "project_id": "testfcm-7d5e1",
+    "storage_bucket": "testfcm-7d5e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802341075521:android:e1641c0cfa2d9904",
+        "android_client_info": {
+          "package_name": "com.testihma.ihma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802341075521-397e9tjvk23ia0t3mfpn6kug0q7scf39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWyEhUP7insD3FwbiGS75iL44tdhviDr4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

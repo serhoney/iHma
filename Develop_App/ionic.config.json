@@ -1,0 +1,7 @@
+{
+  "name": "FirstWorkShop",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
