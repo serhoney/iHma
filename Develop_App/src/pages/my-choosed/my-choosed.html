@@ -1,0 +1,92 @@
+
+<!-- Header  -->
+<ion-header no-border>
+    <ion-navbar color="white" no-border>
+
+      <!-- Buttons  -->
+      <ion-buttons start>
+        <button ion-button color="color1" clear (tap)="dismiss()">
+          <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+        </button>
+      </ion-buttons>
+
+      <!-- Title of Page  -->
+      <ion-title color="color1">My Choosed Dogs</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<!-- COntent  -->
+<ion-content padding>
+    <ion-card-header color="color1">
+      <ion-list>
+
+          <ion-row>
+              <ion-col col-6  class="custom-col" >
+                  <p class="custom-title" text-left>Name</p>
+              </ion-col>
+              <ion-col col-6 class="custom-col" >
+                  <p class="custom-title" text-right>Status</p>
+              </ion-col>
+          </ion-row>
+
+       <!-- <ion-row>
+        <ion-col col-6  class="custom-col" > -->
+        <ion-item no-lines *ngFor="let dogs of objArrayData">
+          <ion-avatar item-start>
+            <img style="zoom:2.0;" src="{{ImgURL}}/{{dogs.img1}}" />
+          </ion-avatar>
+          <h2>{{dogs.dog_name}}</h2>
+        <!-- </ion-col>
+      </ion-row> -->
+
+      <button ion-button color="primary" item-right class="button button-dark customBtn" *ngIf="dogs.activate == 1 && dogs.is_matching == 1">
+          <div item-right>
+            <div><ion-icon name="basket" ></ion-icon></div>
+            <label>Matching</label>
+          </div>
+        </button>
+
+        <button ion-button color="color7" item-right class="button button-dark customBtn" *ngIf="dogs.activate == 1 && dogs.is_matching == 0">
+          <div item-right>
+            <div><ion-icon name="md-contacts"></ion-icon></div>
+            <label>Choosed</label>
+          </div>
+        </button>
+
+        <button ion-button color="color1" item-right class="button button-dark customBtn" *ngIf="dogs.activate == 0">
+          <div item-right>
+            <div><ion-icon name="md-lock" ></ion-icon></div>
+            <label>Closed</label>
+          </div>
+        </button>
+
+        </ion-item>
+
+
+      </ion-list>
+    </ion-card-header>
+</ion-content>
+
+
+  <!-- COntent  -->
+  <!-- <ion-content padding>
+      <ion-row>
+          <ion-col col-6  class="custom-col" >
+              <p class="custom-title" text-left>Name</p>
+          </ion-col>
+          <ion-col col-6 class="custom-col" >
+              <p class="custom-title" text-center>Status</p>
+          </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let dogs of objArrayData">
+          <ion-col col-6  class="custom-col" >
+          <ion-avatar item-start>
+              <img style="zoom:2.0;" src="{{ImgURL}}/{{dogs.img1}}" />
+            </ion-avatar>
+              <p class="custom-title" text-left>{{dogs.dog_name}}</p>
+          </ion-col>
+          <ion-col col-6 class="custom-col" >
+              <p class="custom-title" text-center>test</p>
+          </ion-col>
+      </ion-row>
+</ion-content> -->

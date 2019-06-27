@@ -1,0 +1,165 @@
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+<!--
+    <ion-buttons end>
+        <button ion-button color="color1" clear (tap)="dismiss()">
+          <b>Done</b>
+        </button>
+      </ion-buttons> -->
+
+    <!-- Page Title  -->
+    <ion-title color="color1">Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+  <!-- Profile Photo Section  -->
+  <!-- <div class="photos-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-7 class="col1">
+          <h4 *ngIf="!img1" class="custom-text">1</h4>
+          <img *ngIf="img1" [src]="img1">
+          <button icon-only class="bottom-right" (click)="takePhoto(1)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+        </ion-col>
+
+        <ion-col col-4>
+          <ion-row>
+            <ion-col col-12 class="col2">
+              <h4 *ngIf="!img2" class="custom-text">2</h4>
+              <img *ngIf="img2" [src]="img2">
+              <button icon-only class="bottom-right" (click)="takePhoto(2)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+            </ion-col>
+
+            <ion-col col-12 class="col2">
+              <h4 *ngIf="!img3" class="custom-text">3</h4>
+              <img *ngIf="img3" [src]="img3">
+              <button icon-only class="bottom-right" (click)="takePhoto(3)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col col-3.5 class="col2">
+          <h4 *ngIf="!img6" class="custom-text">6</h4>
+          <img *ngIf="img6" [src]="img6">
+          <button icon-only class="bottom-right" (click)="takePhoto(6)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+        </ion-col>
+
+        <ion-col col-3.5 class="col2">
+          <h4 *ngIf="!img5" class="custom-text">5</h4>
+          <img *ngIf="img5" [src]="img5">
+          <button icon-only class="bottom-right" (click)="takePhoto(5)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+        </ion-col>
+
+        <ion-col col-3.5 class="col2">
+          <h4 *ngIf="!img4" class="custom-text">4</h4>
+          <img *ngIf="img4" [src]="img4">
+          <button icon-only class="bottom-right" (click)="takePhoto(4)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div> -->
+  <ion-card>
+      <img src="{{userData.picture}}"/>
+  </ion-card>
+  <!-- Smart Photos Option  -->
+  <!--
+  <ion-item>
+    <ion-label color="color7">Smart Photos</ion-label>
+    <ion-toggle checked="true" color="color3"></ion-toggle>
+  </ion-item>
+  -->
+
+  <!-- Profile Information  -->
+  <ion-list inset no-lines color="color7">
+  <!--  <p>Smart Photos continuously tests all your profile photos and picks the best one to show first.</p> -->
+
+    <!-- About  -->
+    <p><b>About</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="About You" [(ngModel)]="form.txt_about" value="{{userData.about}}" ></ion-input>
+    </ion-item>
+
+    <!-- <p><b>Control Your Profile</b></p>
+    <ion-item>
+      <ion-label color="color7">Show your age</ion-label>
+      <ion-toggle color="color3"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="color7">Show your gender</ion-label>
+      <ion-toggle color="color3"></ion-toggle>
+    </ion-item> -->
+
+    <!-- Job Title
+    <p><b>Job Title</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add Job Title"></ion-input>
+    </ion-item>
+  -->
+    <!-- Company
+    <p><b>Company</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add Company"></ion-input>
+    </ion-item>
+-->
+    <!-- School  -->
+    <!--
+    <p><b>School</b></p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="Add School"></ion-input>
+    </ion-item>
+    -->
+
+    <!-- Instagram Photos  -->
+    <!--
+    <p><b>Show my Instagram Photos</b></p>
+    <ion-item no-padding>
+      <button ion-button color="color3" clear>Connect Instagram</button>
+    </ion-item>
+    -->
+
+    <!-- Gender  -->
+    <!--
+    <p><b>Gender</b></p>
+    <ion-list radio-group no-padding>
+      <ion-item>
+        <ion-label>Man</ion-label>
+        <ion-radio color="color3" checked="false" value="Man"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Women</ion-label>
+        <ion-radio color="color3" checked="true" value="Women"></ion-radio>
+      </ion-item>
+    </ion-list>
+    -->
+
+    <!-- Control Your Profile  -->
+    <!--
+    <p><b>Control Your Profile</b></p>
+    <ion-item>
+      <ion-label color="color7">Don't Show My Age</ion-label>
+      <ion-toggle checked="true" color="color3"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label color="color7">Make My Distance Invisible</ion-label>
+      <ion-toggle checked="false" color="color3"></ion-toggle>
+    </ion-item>
+    -->
+  </ion-list>
+</ion-content>
+<!-- End Content  -->

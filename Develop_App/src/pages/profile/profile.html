@@ -1,0 +1,119 @@
+<!--
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- User Profile Page -->
+
+<!-- Content  -->
+<ion-content>
+  <div class="container">
+    <div class="top">
+      <!-- User Information  -->
+      <div id="user-introduction">
+           <!-- <ion-row *ngIf="userData">
+              <ion-col col-12 text-center>
+                <img [src]="userData.picture" />
+              </ion-col>
+              <ion-col col-12 text-center>
+                <div class="fullname">{{ userData.username }}</div>
+              </ion-col>
+            </ion-row>-->
+
+         <ion-row>
+          <ion-col col-12 text-center>
+            <!-- <img src="assets/imgs/13.jpg"> -->
+            <img src="{{userData.picture}}">
+          </ion-col>
+          <ion-col col-12 text-center>
+            <!-- <div class="fullname">Kaimook</div> -->
+            <div class="fullname">{{ userData.username }}</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <!-- Buttons  -->
+      <div class="actions-btns">
+        <ion-row>
+          <!-- Edit Profile Option Button -->
+          <ion-col col-6  class="custom-col">
+            <button color="light" ion-fab (click)="openEditProfilePage()">
+              <ion-icon color="color7" name="md-create" style="zoom:1.2;"></ion-icon>
+            </button>
+            <div class="btn-text">Edit Info</div>
+          </ion-col>
+          <!-- End Edit Profile Option Button  -->
+          <!-- Settings Button  -->
+          <ion-col col-6 class="custom-col">
+              <button color="light" ion-fab (click)="openSettingsPage()">
+                <ion-icon color="color7" name="settings" style="zoom:1.2;"></ion-icon>
+              </button>
+              <div class="btn-text">Settings</div>
+            </ion-col>
+            <!-- End Settings Button  -->
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-6 class="custom-col">
+                <button color="light" ion-fab (click)="openAddDogsPage()">
+                    <ion-icon color="color3" name="add" style="zoom:2.5;"></ion-icon>
+                  </button>
+                  <div class="btn-text">Add Dogs</div>
+            </ion-col>
+          <!-- Add Media Button -->
+            <ion-col col-6 class="custom-col">
+              <button color="light" ion-fab (click)="openAddRequestPage()">
+                <ion-icon color="color3" name="bookmark" style="zoom:1.2;"></ion-icon>
+              </button>
+              <div class="btn-text">Add Request</div>
+            </ion-col>
+            <!-- End Add Media Button  -->
+
+        </ion-row>
+        <ion-row>
+            <ion-col col-4>
+              <button color="light" ion-fab (click)="openMyDogsPage()">
+                <ion-icon color="color3" name="md-paw" style="zoom:1.2;"></ion-icon>
+              </button>
+              <div class="btn-text">My Dogs</div>
+            </ion-col>
+
+            <ion-col col-4>
+                <button color="light" ion-fab (click)="openMyChoosedPage()">
+                  <ion-icon color="color3" name="basket" style="zoom:1.2;"></ion-icon>
+                </button>
+                <div class="btn-text">My Choosed Dog</div>
+              </ion-col>
+
+            <ion-col col-4 >
+              <button color="light" ion-fab (click)="openMyrequestPage()">
+                <ion-icon color="color3" name="logo-buffer" style="zoom:1.2;"></ion-icon>
+              </button>
+              <div class="btn-text">My Request</div>
+            </ion-col>
+        </ion-row>
+
+      </div>
+    </div>
+
+    <!-- Slider
+    <div class="bottom" *ngIf="sliderData" text-center>
+      <ion-slides class="animated slideInLeft" pager loop="true" effect="slide" autoplay="4000">
+        <ion-slide *ngFor="let data of sliderData">
+          <h4>{{data.title}}</h4>
+          <p>{{data.details}}</p>
+        </ion-slide>
+      </ion-slides>
+    </div>
+     End Slider  -->
+  </div>
+</ion-content>
+<!-- End Content  -->
+
+<!-- Footer  -->
+<ion-footer no-shadow no-border>
+  <ion-toolbar position="bottom">
+    <button padding ion-button color="white" round>Please Setting Before Swipe</button>
+  </ion-toolbar>
+</ion-footer>
+<!-- End footer  -->

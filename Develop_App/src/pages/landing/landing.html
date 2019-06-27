@@ -1,0 +1,78 @@
+<!--
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+
+<ion-header no-shadow>
+    <ion-row>
+        <ion-col col-4 id="header-icon"></ion-col>
+        <ion-col col-4 id="header-icon"><img src="assets/imgs/ihma-icon-with-name.png"/></ion-col>
+        <ion-col col-4 id="header-icon"></ion-col>
+      </ion-row>
+</ion-header>
+
+<!-- Landing Page -->
+
+<ion-content id="landing-page">
+  <div class="background" text-center>
+    <div class="logo-contents animated fadeInDown">
+
+      <!-- Slider Cntent  -->
+      <ion-slides pager autoplay="5000" loop="true">
+        <ion-slide>
+          <ion-icon name="chatbubbles" style="zoom:4.0;" color="color4"></ion-icon>
+          <p class="heading">น้องหมาหาบ้าน</p>
+          <p class="H3" padding>มีน้องหมามากมายที่รอคุณอยู่</p>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-icon name="thumbs-up" style="zoom:4.0;" color="color4"></ion-icon>
+          <p class="heading">ตกลงรับเลี้ยง</p>
+          <p class="H3" padding>เจอน้องหมาถูกใจ Like! เลย</p>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-icon name="chatbubbles" style="zoom:4.0;" color="color4"></ion-icon>
+          <p class="heading">เจ้าของผู้ใจดี</p>
+          <p class="H3" padding>คุยกับเจ้าของผู้ใจดี</p>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <!-- Buttons  -->
+    <ion-row>
+      <!-- Sign Up Button  -->
+      <ion-col>
+          <div class="button-option animated fadeInUp" padding>
+            <!--a (click)="goToSignUpPage()"><img src="assets/imgs/facebook-login.png"/></a-->
+            <a (click)="loginAction()"><img src="assets/imgs/facebook-login.png"/></a>
+           <!-- <ion-card *ngIf="userData">
+              <ion-card-header>{{ userData.username }}</ion-card-header>
+              <img [src]="userData.picture" />
+              <ion-card-content>
+                <p>Id: {{ userData.id }}</p>
+                <p>Email: {{ userData.email }}</p>
+                <p>First Name: {{ userData.first_name }}</p>
+                <p>Last Name: {{ userData.last_name }}</p>
+              </ion-card-content>
+            </ion-card>-->
+          </div>
+      </ion-col>
+
+      <!-- Sign Up Button
+      <ion-col>
+        <div class="button-option animated fadeInUp" padding>
+          <button class="custom-btn" ion-button padding round full color="color4" (click)="goToSignUpPage()">SIGN UP</button>
+        </div>
+      </ion-col>
+      Sign In Button
+      <ion-col>
+        <div class="button-option animated fadeInUp" padding>
+          <button class="custom-btn" ion-button padding round full color="color4" (click)="goToSignInPage()">SIGN IN</button>
+        </div>
+      </ion-col>
+    -->
+    </ion-row>
+  </div>
+</ion-content>

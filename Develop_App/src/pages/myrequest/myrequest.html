@@ -1,0 +1,74 @@
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Title of Page  -->
+    <ion-title color="color1">My Request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- COntent  -->
+<ion-content padding>
+      <ion-card-header color="color1">
+        <ion-list>
+          <ion-item no-lines *ngFor="let reqs of objArrayData">
+
+              <ion-item-sliding #item>
+
+                  <ion-item>
+            <ion-avatar item-start>
+              <!--img style="zoom:2.0;" [src]="user.Images[0]"-->
+              <!-- <img style="zoom:2.0;" src="assets/imgs/Pomeranian.jpg"> -->
+              <img style="zoom:2.0;" src="{{ImgURL}}/{{reqs.breedimg}}" />
+
+            </ion-avatar>
+            <!--h2  (click)="openMyDogDetailsPage()">{{user.Name}}</h2-->
+            <h2>{{reqs.breedname}}</h2>
+            <!-- <p>{{reqs.colorname}}</p> -->
+            <p *ngIf="reqs.req_gender == 'M'" >{{reqs.colorname}} เพศผู้</p>
+            <p *ngIf="reqs.req_gender == 'F'" >{{reqs.colorname}} เพศเมีย</p>
+            <p>อายุ {{(reqs.req_min_age - (reqs.req_min_age %12))/12}} Y {{reqs.req_min_age % 12}} M ถึง {{(reqs.req_max_age - (reqs.req_max_age %12))/12}} Y {{reqs.req_max_age % 12}} M</p>
+
+            <button ion-button color="primary"  item-right class="button button-dark customBtn" (click)="openSwipe(reqs)">
+                <div>
+                  <div><ion-icon name="flag"></ion-icon></div>
+                  <label>{{reqs.count}}</label>
+                </div>
+              </button>
+
+
+          </ion-item>
+
+            <!-- <button ion-button color="danger"  item-right class="button button-dark customBtn" >
+              <div>
+                <div>
+                  <ion-icon name="flag"></ion-icon>
+                </div>
+                <label>{{reqs.count}}</label>
+              </div>
+            </button> -->
+
+              <ion-item-options side="right" item-right>
+                <button ion-button (click)="unactive(reqs.req_no)" color="danger" ><ion-icon name="trash"></ion-icon></button>
+              </ion-item-options>
+            </ion-item-sliding>
+
+
+            <!--button color="light" ion-fab item-right class="fab fab-dark customBtn">
+              <div>
+                <ion-icon color="color7" name="md-create" style="zoom:0.9;"></ion-icon>
+              </div>
+            </button-->
+
+          </ion-item>
+        </ion-list>
+      </ion-card-header>
+  </ion-content>

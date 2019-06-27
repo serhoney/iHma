@@ -1,0 +1,36 @@
+page-matches-dog {
+  .swiper-slide img {
+      height: 60px !important;
+      width: 60px;
+      border-radius: 50%;
+  }
+  ion-slides {
+      height: auto;
+  }
+  img {
+      width: 80px !important;
+      height: 80px !important;
+  }
+  .custom-title {
+      font-size: 16px;
+      color: $color3;
+      font-weight: bold;
+  }
+  .name-title {
+      font-size: 16px;
+      color: black;
+      font-weight: bold;
+  }
+
+  #cart-btn {
+    position: relative;
+    color : red;
+ }
+
+ #cart-badge {
+    position: relative;
+    top: 20px;
+    right: 0px;
+    left: 60px;
+ }
+}

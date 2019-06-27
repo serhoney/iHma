@@ -1,0 +1,39 @@
+
+
+<ion-content padding>
+  <div class="title">
+    It's a Match!
+  </div>
+
+  <div class="sub-title">
+    You and
+    <!-- <p class="name">{{userInfo.Name}}</p> have liked each other for น้องขนปุย. -->
+  </div>
+
+    <!-- User Image Section  -->
+  <div class="images">
+    <div class="person">
+      <!-- <img [src]="userInfo.Images[0]"> -->
+    </div>
+  </div>
+  <!-- User Image Section  -->
+  <div class="images">
+    <div class="person">
+      <img src="assets/imgs/13.jpg">
+    </div>
+    <div class="person">
+      <!--img [src]="userInfo.Images[0]"-->
+      <img src="assets/imgs/001.jpg">
+    </div>
+  </div>
+
+  <!-- Buttons  -->
+  <div class="buttons">
+    <button ion-button block round (click)="goToChatPage()">Send a message</button>
+    <button ion-button block round class="cancel" (click)="dismiss()">Keep watching</button>
+    <!--<button ion-button block clear class="share">
+      <ion-icon name="md-share"></ion-icon>
+      Tell your friends
+    </button>-->
+  </div>
+</ion-content>

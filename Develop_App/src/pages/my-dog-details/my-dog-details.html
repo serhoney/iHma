@@ -1,0 +1,100 @@
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Page Title  -->
+    <ion-title color="color1">List of Adopted</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+  <!-- Profile Photo Section  -->
+  <div class="photos-section">
+    <ion-grid>
+
+      <ion-row justify-content-center align-items-center>
+        <ion-col col-5 class="col1">
+           <div swing-stack #myswing1  id="card-stack" >
+            <ion-card #mycards1 swing-card>
+              <h4 *ngIf="!img1" class="custom-text"></h4>
+              <img src="assets/imgs/001.jpg">
+                <div class="overlay" (tap)="goToUserDetailsPage()">
+                  <p class="name">
+                      Cherprang
+                  </p>
+                </div>
+            </ion-card>
+          </div>
+        </ion-col>
+
+            <ion-col col-5 class="col1">
+                <div swing-stack #myswing1  id="card-stack" >
+                 <ion-card #mycards1 swing-card>
+                   <h4 *ngIf="!img2" class="custom-text"></h4>
+                   <img src="assets/imgs/002.jpg">
+                     <div class="overlay" >
+                       <p class="name">
+                          Music
+                       </p>
+                     </div>
+                 </ion-card>
+               </div>
+             </ion-col>
+      </ion-row>
+
+      <!-- <ion-row justify-content-center align-items-center>
+        <ion-col col-5 class="col1">
+            <div swing-stack #myswing1  id="card-stack" >
+             <ion-card #mycards1 swing-card>
+               <h4 *ngIf="!img3" class="custom-text"></h4>
+               <img src="assets/imgs/003.jpg">
+                 <div class="overlay" >
+                   <p class="name">
+                      Miori
+                   </p>
+                 </div>
+             </ion-card>
+           </div>
+         </ion-col>
+
+         <ion-col col-5 class="col1">
+            <div swing-stack #myswing1  id="card-stack" >
+             <ion-card #mycards1 swing-card>
+               <h4 *ngIf="!img4" class="custom-text"></h4>
+               <img src="assets/imgs/004.jpg">
+                 <div class="overlay" >
+                   <p class="name">
+                      Tarwaan
+                   </p>
+                 </div>
+             </ion-card>
+           </div>
+         </ion-col>
+
+      </ion-row> -->
+    </ion-grid>
+  </div>
+
+  <!-- Control Your Profile  -->
+    <!--
+    <p><b>Control Your Profile</b></p>
+    <ion-item>
+      <ion-label color="color7">Don't Show My Age</ion-label>
+      <ion-toggle checked="true" color="color3"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label color="color7">Make My Distance Invisible</ion-label>
+      <ion-toggle checked="false" color="color3"></ion-toggle>
+    </ion-item>
+    -->
+</ion-content>
+<!-- End Content  -->

@@ -1,14 +1,14 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<!--
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- Home Page -->
+<!-- This file holds all tabs for pages -->
+<ion-content>
+  <ion-tabs selectedIndex="{{seltabix}}" tabsPlacement="top" no-border>
+    <ion-tab tabIcon="person" [root]="tab1" [rootParams]="{userData : userData}" color="color1"></ion-tab>
+    <ion-tab tabIcon="basket" [root]="tab2" [rootParams]="{userData : userData,swipe :swipe}"></ion-tab>
+    <ion-tab tabIcon="chatbubbles" [root]="tab3" [tabBadge]="this.objArrayData" [rootParams]="{userData : userData}"></ion-tab>
+  </ion-tabs>
 </ion-content>

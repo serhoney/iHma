@@ -1,0 +1,78 @@
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Title of Page  -->
+    <ion-title color="color1">My Dogs</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- COntent  -->
+<ion-content padding>
+  <!-- Slider of New Matches  -->
+  <p class="custom-title">List of My Dogs</p>
+      <ion-card-header color="color1">
+        <ion-list>
+          <ion-item no-lines *ngFor="let dogs of objArrayData">
+            <ion-avatar item-start>
+              <!--img style="zoom:2.0;" [src]="dogs.Images[0]">-->
+              <img style="zoom:2.0;" src="{{ImgURL}}/{{dogs.img1}}" />
+            </ion-avatar>
+            <h2>{{dogs.dog_name}}</h2>
+
+            <button ion-button color="danger"  item-right class="button button-dark customBtn" (click)="openMyDogDetailsPage(dogs)">
+              <div>
+                <div>
+                  <ion-icon name="heart"></ion-icon>
+                </div>
+                <label>{{dogs.count}}</label>
+              </div>
+            </button>
+            <button color="light" ion-fab item-right class="fab fab-dark customBtn" (click)="openEditDogPage(dogs)">
+              <div>
+                <ion-icon color="color7" name="md-create" style="zoom:0.9;"></ion-icon>
+              </div>
+            </button>
+
+          </ion-item>
+        </ion-list>
+      </ion-card-header>
+
+
+  <p class="custom-title">List of My Cloesed Case Dogs</p>
+  <ion-card-header color="color1">
+    <ion-list>
+      <ion-item no-lines *ngFor="let dogs of objArrayDataClosed">
+        <ion-avatar item-start>
+          <!--img style="zoom:2.0;" [src]="dogs.Images[0]">-->
+          <img style="zoom:2.0;" src="{{ImgURL}}/{{dogs.img1}}" />
+        </ion-avatar>
+        <h2>{{dogs.dog_name}}</h2>
+
+        <button ion-button color="danger"  item-right class="button button-dark customBtn" (click)="openMyDogDetailsPage(dogs)">
+          <div>
+            <div>
+              <ion-icon name="heart"></ion-icon>
+            </div>
+            <label>{{dogs.count}}</label>
+          </div>
+        </button>
+        <button color="light" ion-fab item-right class="fab fab-dark customBtn" (click)="openEditDogPage(dogs)">
+          <div>
+            <ion-icon color="color7" name="md-create" style="zoom:0.9;"></ion-icon>
+          </div>
+        </button>
+
+      </ion-item>
+    </ion-list>
+  </ion-card-header>
+
+  </ion-content>

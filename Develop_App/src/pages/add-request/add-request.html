@@ -1,0 +1,88 @@
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button color="color1" clear (tap)="SaveReq()">
+        <b>Save</b>
+      </button>
+    </ion-buttons>
+
+    <!-- Page Title  -->
+    <ion-title color="color1">Add Request</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+  <!-- Profile Photo Section  -->
+
+  <ion-list inset no-lines color="color7">
+   <p>If you not like any dogs in the list ,give us your requirement and we will remind you when your requirement is matched</p>
+
+    <!-- Breed  -->
+    <p><b>Breed </b></p>
+    <!-- <ion-item no-padding>
+      <ion-input type="text" placeholder="What is dog breeds you want ?" [(ngModel)]="form.txt_dogbreed" clearInput></ion-input>
+    <img src="assets/imgs/Pomeranian.jpg" item-right>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label>What is dog breeds you want ?</ion-label>
+      <ion-select [(ngModel)]="form.txt_breed">
+        <ion-option *ngFor="let breeds of objArrayDogBreed" value="{{breeds.breed_id}}">{{breeds.dog_breed}}</ion-option>
+        <ion-option value="0">อื่น ๆ / พันธุ์ผสม - Mixed-breed dog</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Age -->
+    <p><b>Age</b></p>
+    <ion-item no-padding>
+        <p text-right>
+       <!-- <span *ngIf="ages" right>0 Y 0 M - 10 Y 0 M</span> -->
+       <span *ngIf="form.txt_ages_range" right>{{(form.txt_ages_range.lower- (form.txt_ages_range.lower %12))/12}} Y {{form.txt_ages_range.lower % 12}} M - {{(form.txt_ages_range.upper - (form.txt_ages_range.upper %12))/12}} Y {{form.txt_ages_range.upper % 12}} M</span>
+       <!--span *ngIf="ages" right>0 Y {{ages.lower}} M - 1 Y {{ages.upper}} M</span-->
+      </p>
+      <ion-card-content>
+        <ion-item>
+          <ion-range color="color1" dualKnobs="true" [(ngModel)]="form.txt_ages_range" min="0" max="120" debounce="500" pin="true"></ion-range>
+        </ion-item>
+    </ion-card-content>
+    </ion-item>
+
+    <p><b>Color</b></p>
+    <!-- <ion-item no-padding>
+      <ion-input type="text" placeholder="What is color you want?" [(ngModel)]="form.txt_dogcolor" clearInput></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label>What is color you want?</ion-label>
+      <ion-select [(ngModel)]="form.txt_color" okText="Select" cancelText="Dismiss">
+        <ion-option *ngFor="let colors of objArrayColor" value="{{colors.color_id}}">{{colors.dog_color}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <p><b>Gender</b></p>
+    <ion-list radio-group no-padding [(ngModel)]="form.txt_reqgender">
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio color="color3" checked="false" value="M"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio color="color3" checked="true" value="F"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+  </ion-list>
+</ion-content>
+<!-- End Content  -->

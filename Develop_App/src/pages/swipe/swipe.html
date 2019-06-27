@@ -1,0 +1,84 @@
+
+
+<ion-content>
+  <!-- Loding Spinner  -->
+  <div class="loading" *ngIf="objArrayData?.length == 0">
+
+  <!-- <div class="loading" *ngIf="objArrayData?.length == 0 ?doRefresh():false"> -->
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <img src="assets/imgs/1.jpg">
+      <div class="label">{{msgstatus}}</div>
+    </div>
+  </div>
+
+  <!-- Swipe Card  -->
+  <!-- This card is apply from - https://github.com/ksachdeva/angular2-swing  -->
+  <!-- Every single user will be shown in this card -->
+  <div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="like(false)" (throwoutright)="like(false)"
+  (throwoutdown)="like(false)" (throwoutup)="like(false)" id="card-stack" *ngIf="objArrayData?.length > 0">
+    <ion-card #mycards1 swing-card *ngFor="let dogs of objArrayData">
+
+       <img *ngIf="dogs.req_chk == 1" class="isreq" src="assets/imgs/img_request.png">
+      <img *ngIf="dogs.img1" src="{{ImgURL}}/{{dogs.img1}}">
+      <!-- <img *ngIf="dogs.img1 && dogs.req_chk == 1" class="isreq" src="{{ImgURL}}/{{dogs.img1}}"> -->
+
+      <div class="overlay" (tap)="goToDogDetailsPage(dogs)">
+        <div class="card-title">
+          <p class="name">
+            {{ dogs.dog_name }}
+          </p>
+          <p class="job-title">
+            {{dogs.dog_breedname}}
+          </p>
+          <p class="job-title">
+              {{(dogs.dog_ages - (dogs.dog_ages %12))/12}} Y {{dogs.dog_ages % 12}} M
+          </p>
+        </div>
+      </div>
+    </ion-card>
+  </div>
+
+  <!-- Bottom Buttons  -->
+  <div class="buttons" *ngIf="objArrayData?.length > 0">
+
+
+    <!-- Dis-Like Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="dislike" (click)="like(false)" id="dislike-button">
+        <ion-icon color="color7" name="md-close"></ion-icon>
+      </button>
+    </div>
+
+
+    <!-- Like Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="like" (click)="like(true)" id="like-button">
+        <ion-icon color="color5" name="heart"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Refresh Button-->
+    <!-- <div class="button-container">
+      <button ion-button icon-only round class="refresh" (click)="refresh()">
+        <ion-icon color="color7" name="refresh"></ion-icon>
+      </button>
+    </div> -->
+
+    <!-- Super Like Button-->
+    <!-- <div class="button-container">
+      <button ion-button icon-only round class="super-like" (click)="like(true)" id="super-like-button">
+        <ion-icon color="color4" name="star"></ion-icon>
+      </button>
+    </div> -->
+
+    <!-- Flash Button-->
+    <!-- <div class="button-container">
+      <button ion-button icon-only round class="refresh">
+        <ion-icon color="color6" name="flash"></ion-icon>
+      </button>
+    </div> -->
+
+  </div>
+</ion-content>

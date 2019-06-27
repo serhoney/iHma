@@ -1,0 +1,181 @@
+
+<!-- Header  -->
+<ion-header no-border>
+    <ion-navbar color="white" no-border>
+
+      <!-- Buttons  -->
+      <ion-buttons start>
+        <button ion-button color="color1" clear (tap)="dismiss()">
+          <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+        </button>
+      </ion-buttons>
+
+      <ion-buttons end>
+        <button ion-button color="color1" clear (click)="adddogs()">
+          <b>Add</b>
+        </button>
+      </ion-buttons>
+
+      <!-- Page Title  -->
+      <ion-title color="color1">Add Dogs</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <!-- End Header  -->
+
+<!-- Content  -->
+<ion-content>
+    <!-- Profile Photo Section  -->
+    <div class="photos-section">
+      <ion-grid>
+        <ion-row>
+          <!-- Photo One  -->
+          <ion-col col-7 class="col1">
+            <h4 *ngIf="!img1" class="custom-text">1</h4>
+            <img *ngIf="img1" [src]="img1">
+            <button icon-only class="bottom-right" (click)="takePhoto(1)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+           <!-- <button icon-only class="bottom-right" (click)="openImagePicker()"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>-->
+          </ion-col>
+
+          <ion-col col-4>
+            <ion-row>
+              <!-- Photo 2  -->
+              <ion-col col-12 class="col2">
+                <h4 *ngIf="!img2" class="custom-text">2</h4>
+               <img *ngIf="img2" [src]="img2">
+                <button icon-only class="bottom-right" (click)="takePhoto(2)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+              </ion-col>
+
+              <!-- Photo 3 -->
+              <ion-col col-12 class="col2">
+                <h4 *ngIf="!img3" class="custom-text">3</h4>
+               <img *ngIf="img3" [src]="img3">
+                <button icon-only class="bottom-right" (click)="takePhoto(3)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <!-- Photo 6  -->
+          <ion-col col-3.5 class="col2">
+            <h4 *ngIf="!img6" class="custom-text">6</h4>
+           <img *ngIf="img6" [src]="img6">
+            <button icon-only class="bottom-right" (click)="takePhoto(6)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+          </ion-col>
+
+          <!-- Photo 5 -->
+          <ion-col col-3.5 class="col2">
+            <h4 *ngIf="!img5" class="custom-text">5</h4>
+           <img *ngIf="img5" [src]="img5">
+            <button icon-only class="bottom-right" (click)="takePhoto(5)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+          </ion-col>
+
+          <!-- Photo 4 -->
+          <ion-col col-3.5 class="col2">
+            <h4 *ngIf="!img4" class="custom-text">4</h4>
+           <img *ngIf="img4" [src]="img4">
+            <button icon-only class="bottom-right" (click)="takePhoto(4)"><ion-icon name="add" color="white" style="zoom:1.2;"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+
+    <!-- Smart Photos Option  -->
+    <!--
+    <ion-item>
+      <ion-label color="color7">Smart Photos</ion-label>
+      <ion-toggle checked="true" color="color3"></ion-toggle>
+    </ion-item>
+    -->
+    <!-- Profile Information  -->
+
+    <ion-list inset no-lines color="color7">
+     <p>Improve interest with your dog's detail</p>
+
+
+      <!-- Name  -->
+      <p><b>Name</b></p>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="What is your dog name?" [(ngModel)]="form.txt_dogname" clearInput></ion-input>
+      </ion-item>
+
+      <!-- Age -->
+      <p><b>Age</b></p>
+      <ion-item no-padding>
+          <p text-right>
+            <span *ngIf="form.txt_ages" right>{{(form.txt_ages - (form.txt_ages %12))/12}} Y {{form.txt_ages % 12}} M </span>
+            <!--span *ngIf="ages" right>{{agesMin.year}} Y {{agesMin.month}} M - {{agesMax.year}} Y {{agesMax.month}} M</span-->
+            <!--<span *ngIf="ages" right>Puppy - Senior</span>-->
+          </p>
+          <ion-card-content>
+            <ion-item>
+              <ion-range color="color1" [(ngModel)]="form.txt_ages" min="0" max="120" debounce="500" pin="true"></ion-range>
+            </ion-item>
+          </ion-card-content>
+      </ion-item>
+      <!-- Company  -->
+      <p><b>Breed</b></p>
+      <!-- <ion-item no-padding>
+        <ion-input type="text" placeholder="What is your dog  Breed ?" [(ngModel)]="form.txt_breed" clearInput></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label>What is your dog breed?</ion-label>
+        <ion-select [(ngModel)]="form.txt_breed">
+          <ion-option *ngFor="let breeds of objArrayDogBreed" value="{{breeds.breed_id}}">{{breeds.dog_breed}}</ion-option>
+          <ion-option value="0">อื่น ๆ / พันธุ์ผสม - Mixed-breed dog</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Instagram Photos  -->
+      <!-- <p><b>Color</b></p>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="What is your dog color ?" [(ngModel)]="form.txt_color" clearInput></ion-input>
+      </ion-item> -->
+
+      <p><b>Color</b></p>
+      <ion-item>
+        <ion-label>What is your dog color?</ion-label>
+        <ion-select [(ngModel)]="form.txt_color" okText="Select" cancelText="Dismiss">
+          <ion-option *ngFor="let colors of objArrayColor" value="{{colors.color_id}}">{{colors.dog_color}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <!-- Gender  -->
+      <p><b>Gender</b></p>
+      <ion-list radio-group no-padding [(ngModel)]="form.txt_gender">
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio color="color3" checked="false" value="M"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio color="color3" checked="true" value="F"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <!-- About  -->
+      <p><b>About Your Dog</b></p>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="About You" [(ngModel)]="form.txt_dogabout" clearInput></ion-input>
+      </ion-item>
+
+      <!-- Control Your Profile  -->
+      <!--
+      <p><b>Control Your Profile</b></p>
+      <ion-item>
+        <ion-label color="color7">Don't Show My Age</ion-label>
+        <ion-toggle checked="true" color="color3"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label color="color7">Make My Distance Invisible</ion-label>
+        <ion-toggle checked="false" color="color3"></ion-toggle>
+      </ion-item>
+    -->
+
+    </ion-list>
+  </ion-content>
+  <!-- End Content  -->

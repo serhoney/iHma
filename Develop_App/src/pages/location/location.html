@@ -1,0 +1,29 @@
+<ion-header no-border>
+    <ion-navbar color="white" no-border>
+
+      <!-- Buttons  -->
+      <ion-buttons start>
+        <button ion-button color="color1" clear (tap)="dismiss()">
+          <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button color="color1" clear (tap)="SaveLocation()">
+          <b>Add</b>
+        </button>
+      </ion-buttons>
+
+      <!-- Page Title  -->
+      <ion-title color="color1">Maps</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <!-- <div #map style="height :100%"></div> -->
+
+
+  <!-- <div id="map_canvas"></div> -->
+  <div id="map_canvas"></div>
+
+
+</ion-content>

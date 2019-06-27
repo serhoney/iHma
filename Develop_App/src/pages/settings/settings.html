@@ -1,0 +1,90 @@
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons left>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- <ion-buttons end>
+      <button ion-button color="color1" clear (click)="SaveSetting()">
+        <b>Save</b>
+      </button>
+    </ion-buttons> -->
+
+
+    <!-- Title of Page  -->
+    <ion-title color="color1">Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+
+
+<!-- COntent  -->
+<ion-content padding>
+  <!-- Location Setting Option -->
+  <ion-card>
+    <ion-card-header color="color1">
+      Location For Swiping
+      <p text-right>{{userSetting.choiceprovince}} <ion-icon name="arrow-forward" (click)="openLocationPage()"></ion-icon></p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+         <p text-right>{{userSetting.city}} {{userSetting.province}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Maximum Distance Option -->
+  <ion-card>
+    <ion-card-header color="color1">
+      Maximum Distance
+      <p text-right>
+        <span *ngIf="form.txt_distance" right>{{form.txt_distance}} Km.</span>
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-range color="color1" min="1" [(ngModel)]="form.txt_distance"></ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Age Range  -->
+  <ion-card>
+    <ion-card-header color="color1">
+     Dog Age Range For Searching
+      <p text-right>
+        <!-- <span *ngIf="ages" right>0 Y 0 M - 2 Y 0 M</span> -->
+        <span *ngIf="form.txt_ages_range" right>{{(form.txt_ages_range.lower- (form.txt_ages_range.lower %12))/12}} Y {{form.txt_ages_range.lower % 12}} M - {{(form.txt_ages_range.upper - (form.txt_ages_range.upper %12))/12}} Y {{form.txt_ages_range.upper % 12}} M</span>
+        <!--<span *ngIf="ages" right>Puppy - Senior</span>-->
+      </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-range color="color1" dualKnobs="true" [(ngModel)]="form.txt_ages_range" min="0" max="120" debounce="500" pin="true"></ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- Logout  -->
+  <ion-card (tap)="logout()">
+    <ion-card-header text-center>
+      Logout
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Delete Account  -->
+  <!-- <ion-card>
+    <ion-card-header text-center color="color1">
+      Delete Account
+    </ion-card-header>
+  </ion-card> -->
+
+</ion-content>

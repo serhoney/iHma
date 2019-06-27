@@ -1,0 +1,68 @@
+<!--
+  - @author    Ionic Bucket <ionicbucket@gmail.com>
+  - @copyright Copyright (c) 2018
+  - @license   Fulcrumy
+-->
+<!-- User Matches Page -->
+
+<ion-content padding>
+
+  <!-- Slider of New Matches  -->
+  <p class="custom-title">Matching for My Dogs</p>
+  <ion-slides slidesPerView="4" class="animated slideInLeft" loop="false" effect="slide" autoplay="4000" *ngIf="objArrayData && objArrayData.length > 0">
+    <ion-slide *ngFor="let dogs of objArrayData">
+      <!-- <ion-grid (click)="openMatchesDogPage(dogs)" *ngIf="dogs.activate == 1"> -->
+      <ion-grid (click)="openMatchesDogPage(dogs)">
+        <ion-row>
+          <ion-col>
+            <!-- <img src ="{{ImgURL}}/{{dogs.img1}}"> -->
+
+            <div *ngIf="dogs.ReadSts==1"><img src ="{{ImgURL}}/{{dogs.img1}}"><ion-badge id="cart-badge" color="color1">!</ion-badge></div>
+            <div *ngIf="dogs.ReadSts==0"><img src ="{{ImgURL}}/{{dogs.img1}}"></div>
+
+            <div>
+              <button ion-button clear color="color1">{{dogs.dog_name | slice:0:10}}</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Slider of Wanted Dog List  -->
+  <p class="custom-title">List of My Wanted List</p>
+  <ion-slides slidesPerView="4" class="animated slideInLeft" loop="false" effect="slide" autoplay="4000" *ngIf="objArrayWanted && objArrayWanted.length > 0">
+    <ion-slide *ngFor="let dogs of objArrayWanted">
+      <!-- <ion-grid (click)="openMatchesDogPage(dogs)" *ngIf="dogs.activate == 1"> -->
+      <ion-grid (click)="openChatBox(dogs)">
+        <ion-row>
+          <ion-col>
+            <div *ngIf="dogs.ReadSts==1"><img src ="{{ImgURL}}/{{dogs.DogImg}}"><ion-badge id="cart-badge" color="color1">!</ion-badge></div>
+            <div *ngIf="dogs.ReadSts==0"><img src ="{{ImgURL}}/{{dogs.DogImg}}"></div>
+            <div>
+              <button ion-button clear color="color1">{{dogs.DogName | slice:0:10}}</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- List of all close case  -->
+  <!-- <p class="custom-title">Closed Case</p>
+  <ion-slides slidesPerView="4" class="animated slideInLeft" loop="false" effect="slide" autoplay="4000" *ngIf="users && users.length > 0">
+    <ion-slide *ngFor="let user of users">
+      <ion-grid (click)="openChatBox()">
+        <ion-row>
+          <ion-col>
+            <img [src]="user.Images[0]" class="bw">
+            <div>
+              <button ion-button clear color="color7">{{user.Name | slice:0:10}}</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides> -->
+
+</ion-content>

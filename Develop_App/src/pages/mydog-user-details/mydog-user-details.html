@@ -1,0 +1,72 @@
+
+<ion-content>
+
+  <!-- User Images  -->
+  <div class="image-container">
+    <!-- <img src="assets/imgs/001.jpg"> -->
+    <img src="{{userInfo.picture}}">
+
+    <!-- Back/Dismiss Button  -->
+    <button ion-button icon-only round color="background" (tap)="dismiss()">
+      <ion-icon name="md-arrow-down" color="light"></ion-icon>
+    </button>
+  </div>
+
+  <!-- User Profile Actions  -->
+  <!-- <ion-fab top right (click)="actions($event)">
+    <button ion-fab mini color="light"><ion-icon name="md-more"></ion-icon></button>
+  </ion-fab> -->
+
+  <!-- User Name & Age  -->
+  <div class="section profile-info">
+    <div class="name">{{userInfo.username}} , {{userInfo.age}} </div>
+  </div>
+
+  <!-- User About Information  -->
+  <div class="section">
+  <!--div class="section description"-->
+  <ion-row>
+
+      <ion-col col-5 class="custom-col"><b>Name</b></ion-col>
+      <ion-col col-5 class="custom-col">{{userInfo.username}}</ion-col>
+
+      <ion-col col-5 class="custom-col"><b>Gender</b></ion-col>
+      <ion-col col-5 class="custom-col">{{userInfo.gender}}</ion-col>
+
+      <ion-col col-5 class="custom-col"><b>Age</b></ion-col>
+      <ion-col col-5 class="custom-col">{{userInfo.age}} Y </ion-col>
+
+      <ion-col col-5 class="custom-col"><b>About</b></ion-col>
+      <ion-col col-5 class="custom-col">{{userInfo.about}}</ion-col>
+
+  </ion-row>
+  </div>
+
+  <!-- Action Buttons  -->
+  <div class="buttons">
+
+    <!-- Dislike Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="dislike" (click)="like(false)">
+        <ion-icon color="color3" name="md-close"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Like Button  -->
+    <div class="button-container">
+      <button ion-button icon-only round class="like" (click)="like(true)">
+        <ion-icon color="color5" name="heart"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Super Like Button  -->
+<!--
+    <div class="button-container">
+      <button ion-button icon-only round class="super-like" (click)="dismiss()">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </div>
+-->
+  </div>
+
+</ion-content>

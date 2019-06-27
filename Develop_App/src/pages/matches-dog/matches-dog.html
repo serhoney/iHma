@@ -1,0 +1,73 @@
+
+<ion-content padding>
+
+
+<!-- Header  -->
+<ion-header no-border>
+  <ion-navbar color="white" no-border>
+
+    <!-- Buttons  -->
+    <ion-buttons start>
+      <button ion-button color="color1" clear (tap)="dismiss()">
+        <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- Title of Page  -->
+    <ion-title color="color1">MyDogsChat</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- End Header  -->
+
+    <!-- Search Input Box  -->
+    <ion-searchbar></ion-searchbar>
+
+    <!-- Slider of New Matches  -->
+    <p class="custom-title">Matches List</p>
+    <ion-slides slidesPerView="4" class="animated slideInLeft" loop="false" effect="slide" autoplay="4000" *ngIf="objArrayData && objArrayData.length > 0">
+      <ion-slide *ngFor="let user of objArrayData">
+        <ion-grid (click)="openChatBox(user)">
+          <ion-row>
+            <ion-col>
+              <!--img [src]="user.Images[0]"-->
+              <img src ="{{user.picture}}">
+              <div>
+                <!--button ion-button clear color="color1">{{user.Name | slice:0:10}}</button-->
+                <button ion-button clear color="color1">{{user.Adop_name}}</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- List of all Users  -->
+    <p class="custom-title">Messages</p>
+
+    <ion-list *ngFor="let user of objArrayMsg">
+      <ion-item no-lines *ngIf = "user.chk_chat != 0 " (click)="openChatBox(user)">
+            <ion-avatar item-start *ngIf="user.ReadSts==0">
+                  <img src ="{{user.picture}}">
+            </ion-avatar>
+            <ion-avatar item-start *ngIf="user.ReadSts==1"><ion-badge id="cart-badge" color="color1">!</ion-badge>
+                  <img src ="{{user.picture}}">
+            </ion-avatar>
+        <h2 class="name-title">{{user.Adop_name}} </h2>
+        <p>{{user.last_msg}}</p>
+
+      </ion-item>
+    </ion-list>
+
+    <!-- List of all Users  -->
+    <!-- <p class="custom-title">Messages</p>
+    <ion-list>
+      <ion-item no-lines *ngFor="let user of users" (click)="openChatBox()">
+        <ion-avatar item-start>
+              <img src="assets/imgs/002.jpg">
+        </ion-avatar>
+        <h2 class="name-title">Music</h2>
+        <p>สวัสดีครับ ขนปุยอยากไปอยู่กับคนน่ารักจังครับ</p>
+      </ion-item>
+    </ion-list> -->
+
+  </ion-content>

@@ -1,0 +1,65 @@
+<ion-header no-border>
+    <ion-navbar color="white" no-border>
+
+      <!-- Buttons  -->
+      <ion-buttons start>
+        <button ion-button color="color1" clear (tap)="dismiss()">
+          <ion-icon name="arrow-back" style="zoom:2.0;"></ion-icon>
+        </button>
+      </ion-buttons>
+
+      <!-- Page Title  -->
+      <ion-title color="color1">My Location</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <!-- End Header  -->
+
+  <!-- Content  -->
+  <ion-content>
+    <!-- Profile Photo Section  -->
+
+    <ion-card>
+        <ion-card-header color="color1">
+            Swiping in
+          </ion-card-header>
+
+      <ion-card-content>
+        <ion-list inset no-lines color="color7">
+          <ion-list radio-group no-padding [(ngModel)]="form.txt_location">
+
+          <ion-item-sliding *ngFor="let currentloca of userCurrentLocation">
+            <ion-item>
+              <ion-label>My Current Location</ion-label>
+              <ion-radio color="color3" value="{{currentloca.location_no}}"></ion-radio>
+            </ion-item>
+          </ion-item-sliding>
+
+          <ion-item-sliding *ngFor="let locations of userLocation">
+            <ion-item>
+              <ion-label>{{locations.locality}} {{locations.province}} </ion-label>
+              <ion-radio color="color3" value="{{locations.location_no}}"></ion-radio>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="color1">
+                  <ion-icon name="trash"></ion-icon>
+                  Delete
+                </button>
+              </ion-item-options>
+          </ion-item-sliding>
+
+          </ion-list>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card (tap)="openLocationPage()">
+  <!-- <ion-card (tap)="openLocationPage()"> -->
+      <ion-card-header text-center>
+        Add a new location
+      </ion-card-header>
+    </ion-card>
+
+  </ion-content>
+  <!-- End Content  -->
+
