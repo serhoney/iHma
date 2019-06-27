@@ -1,8 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.testihma.ihma" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.best.iHma" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="android-targetSdkVersion" value="23" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreenDelay" value="10000" />
     <name>iHma</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>iHma 1.0 </description>
+    <author email="best_nuttivoot@hotmail.com" href="http://facebook.com">Best</author>
+    <universal-links>
+        <host name="ihmaapp.page.link" scheme="https" />
+        <host name="ihma-8ae66.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -75,13 +84,59 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <access origin="http://google.com" />
+        <access origin="https://google.com" />
+        <access origin="http://maps.google.com" />
+        <access origin="http://*.google.com" />
+        <access origin="content:///*" />
+        <access origin="*" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
-    <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
-    <plugin name="cordova-plugin-device" spec="2.0.2" />
-    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.2.1" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="^2.2.6" />
+    <plugin name="cordova-plugin-buildinfo" spec="^2.0.2" />
+    <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
+    <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <allow-navigation href="http://192.168.1.47:8100" sessionid="301619a3" />
+    <plugin name="cordova-plugin-facebook4" spec="^2.3.0">
+        <variable name="APP_ID" value="226962184681707" />
+        <variable name="APP_NAME" value="iHma" />
+        <variable name="ANDROID_SDK_VERSION" value="4.+" />
+    </plugin>
+    <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.2.2">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
+    </plugin>
+    <plugin name="cordova-plugin-crop" spec="^0.4.0" />
+    <plugin name="cordova-plugin-compat" spec="^1.2.0" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>We use your location for full functionality of certain app features.</string>
+    </edit-config>
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-nativegeocoder" spec="^3.1.3">
+        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Use geocoder service" />
+    </plugin>
+    <plugin name="cordova-android-play-services-gradle-release" spec="^2.0.0">
+        <variable name="PLAY_SERVICES_VERSION" value="15.0.0" />
+    </plugin>
+    <plugin name="cordova-android-support-gradle-release" spec="^2.0.1" />
+    <config-file parent="/resources" target="./res/values/strings.xml">
+        <string name="fb_app_id">226962184681707</string>
+        <string name="fb_app_name">iHma</string>
+    </config-file>
+    <allow-navigation href="http://192.168.1.42:8100" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+    </plugin>
+    <plugin name="cordova-plugin-googlemaps" spec="^2.4.6">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDProNsdzg3yThHwTfb_z1NESrMfXJy8Gg" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyDkHu4HEQGhnPCFBxaClJX0hXt5gBBHkG4" />
+    </plugin>
+    <engine name="browser" spec="5.0.4" />
+    <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="7.0.0" />
 </widget>
