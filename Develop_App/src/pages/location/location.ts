@@ -130,8 +130,8 @@ export class LocationPage {
 
   loadmap(){
     Environment.setEnv({
-      'API_KEY_FOR_BROWSER_RELEASE' : 'AIzaSyDUebxUE_VLWpDLHQYK9jIy18HoLZ3LOJ4',
-      'API_KEY_FOR_BROWSER_DEBUG' : 'AIzaSyDUebxUE_VLWpDLHQYK9jIy18HoLZ3LOJ4'
+      'API_KEY_FOR_BROWSER_RELEASE' : '********************',
+      'API_KEY_FOR_BROWSER_DEBUG' : '********************'
     });
 
     let position: LatLng = new LatLng(parseFloat(this.objArrayData[0].lat), parseFloat(this.objArrayData[0].lng));

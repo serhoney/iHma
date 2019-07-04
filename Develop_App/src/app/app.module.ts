@@ -77,12 +77,12 @@ import { MyChoosedPage } from '../pages/my-choosed/my-choosed';
 
 
 var config = {
-  apiKey: "AIzaSyA6GAS7wtXNTKmt6jYAuPKsIWt4T6OAceI",
-  authDomain: "ihma-8ae66.firebaseapp.com",
-  databaseURL: "https://ihma-8ae66.firebaseio.com",
-  projectId: "ihma-8ae66",
-  storageBucket: "ihma-8ae66.appspot.com",
-  messagingSenderId: "697895404710"
+  apiKey: "***************",
+  authDomain: "************",
+  databaseURL: "***************",
+  projectId: "*************",
+  storageBucket: "************",
+  messagingSenderId: "*************"
   };
 
 @NgModule({
